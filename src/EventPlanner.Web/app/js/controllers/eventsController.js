@@ -25,6 +25,15 @@ angular.module('myApp.controllers')
                     $scope.eventItems.push($scope.eventItemToAdd);
                 });
             };
+            
+            $scope.sortableOptions = {
+                stop: function(e, ui) {
+                    var newOrder = _.map($scope.eventItems, function(i) {
+                        return i.ID;
+                    });
+                    eventItems.changeOrder($scope.event.ID, newOrder);
+                }
+            };
 
             eventItems.getAll().then(function(allEvetItems) {
                 $scope.allEventItems = allEvetItems;

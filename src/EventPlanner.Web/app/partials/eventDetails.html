@@ -3,7 +3,7 @@
 <p>Date: {{event.date}}</p>
 
 <h3>Event Items:</h3>
-<ul>
+<ul ui-sortable="sortableOptions" ng-model="eventItems">
     <li ng-repeat="item in eventItems">{{item.name}}</li>
 </ul>
 

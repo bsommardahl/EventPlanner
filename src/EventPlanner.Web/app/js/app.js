@@ -6,7 +6,8 @@ angular.module('myApp', [
     'myApp.filters',
     'myApp.services',
     'myApp.directives',
-    'myApp.controllers'
+    'myApp.controllers',
+    'ui.sortable'
 ]).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/createEvent', { templateUrl: 'app/partials/createEvent.html', controller: 'eventsController' });
