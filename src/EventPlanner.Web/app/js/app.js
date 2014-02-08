@@ -9,8 +9,6 @@ angular.module('myApp', [
     'myApp.controllers'
 ]).
     config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/view1', { templateUrl: 'app/partials/partial1.html', controller: 'MyCtrl1' });
-
         $routeProvider.when('/createEvent', { templateUrl: 'app/partials/createEvent.html', controller: 'eventsController' });
         $routeProvider.when('/events', { templateUrl: 'app/partials/events.html', controller: 'eventsController' });
         $routeProvider.when('/event/:id', { templateUrl: 'app/partials/eventDetails.html', controller: 'eventsController' });
@@ -19,5 +17,5 @@ angular.module('myApp', [
         $routeProvider.when('/eventItems', { templateUrl: 'app/partials/eventItems.html', controller: 'eventItemsController' });
         $routeProvider.when('/eventItem/:id', { templateUrl: 'app/partials/eventItemDetails.html', controller: 'eventItemsController' });
         
-        $routeProvider.otherwise({ redirectTo: '/view1' });
+        $routeProvider.otherwise({ redirectTo: '/events' });
     }]);
