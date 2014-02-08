@@ -1,0 +1,13 @@
+<h1>Create Event</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <td><input type="text" ng-model="event.name" placeholder="Event Name" /></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td><input type='date' ng-model="event.date" /></td>
+    </tr>    
+</table>
+<button ng-click="createEvent()">Create</button>
+<div ng-bind="status"></div>

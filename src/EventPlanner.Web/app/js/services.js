@@ -3,7 +3,19 @@
 /* Services */
 
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+angular.module('myApp.services', [])
+    .service('eventService', ['dataStore', function(dataStore) {
+
+        var service = function() {
+
+
+            return {
+                create: function(name, date) {
+                    return dataStore.insert('events', { name: name, date: date });
+                }
+            };
+        }();
+
+        return service;
+    }]);
+
