@@ -1,0 +1,11 @@
+﻿<h1>Event Details</h1>
+<h2>{{event.name}}</h2>
+<p>Date: {{event.date}}</p>
+
+<h3>Event Items:</h3>
+<ul>
+    <li ng-repeat="item in eventItems">{{item.name}}</li>
+</ul>
+
+<select ng-model="eventItemToAdd" ng-options="i.name for i in allEventItems"></select>
+<button ng-click="addEventItem()">Add</button>

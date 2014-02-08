@@ -23,9 +23,20 @@
 
             db.createTable("events", ["name", "date"]);
 
-            db.insert("events", { name: "Birthday Party", date: new Date(2014, 1, 1) });
+            var event1Id = db.insert("events", { name: "Birthday Party", date: new Date(2014, 1, 1) });
             db.insert("events", { name: "Christmas Day", date: new Date(2013, 12, 25) });
             db.insert("events", { name: "Memorial Service", date: new Date(2014, 2, 12) });
+
+            db.createTable("eventItems", ["name", "content"]);
+
+            var item1Id = db.insert("eventItems", { name: "Clowns", content: "Contact the clownmaster to get the team of clowns. They come in 2's and 5's and cost $200/hour." });
+            var item2Id = db.insert("eventItems", { name: "Open Gifts", content: "Mary is in charge." });
+            var item3Id = db.insert("eventItems", { name: "Clean up", content: "" });
+
+            db.createTable("event_eventItem", ["eventId", "eventItemId"]);
+            db.insert("event_eventItem", { eventId: event1Id, eventItemId: item1Id });
+            db.insert("event_eventItem", { eventId: event1Id, eventItemId: item2Id });
+            db.insert("event_eventItem", { eventId: event1Id, eventItemId: item3Id });
 
             db.commit();
         }
@@ -55,6 +66,15 @@
             get: function (resource, objId) {
                 var deferred = $q.defer();
                 deferred.resolve(db.query(resource, { ID: objId }));
+                return deferred.promise;
+            },
+            getMany: function(resource, objIds) {
+                var deferred = $q.defer();
+                var many = db.query(resource, function(row) {
+                    var match = objIds.indexOf(row.ID) > -1;
+                    return match;
+                });
+                deferred.resolve(many);
                 return deferred.promise;
             },
             getAll: function (resource, query) {

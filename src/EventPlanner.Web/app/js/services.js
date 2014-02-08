@@ -12,7 +12,13 @@ angular.module('myApp.services', [])
             return {
                 create: function(name, date) {
                     return dataStore.insert('events', { name: name, date: date });
-                }
+                },
+                getAll: function() {
+                    return dataStore.getAll('events');
+                },
+                get :function(id) {
+                    return dataStore.get('events', id);
+                }                
             };
         }();
 

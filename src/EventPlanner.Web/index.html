@@ -1,30 +1,40 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="app/css/app.css"/>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/createEvent">Create Event</a></li>
-  </ul>
+    <head>
+        <meta charset="utf-8">
+        <title>My AngularJS App</title>
+        <link rel="stylesheet" href="app/css/app.css"/>
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a href="#/view1">view1</a></li>
+            <li><a href="#/events">Events</a></li>
+            <li><a href="#/createEvent">Create Event</a></li>      
+            <li><a href="#/eventItems">Items</a></li>
+            <li><a href="#/createEventItem">Create Item</a></li>
+        </ul>
 
-  <div ng-view></div>
+        <div ng-view></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="app/lib/angular/angular.js"></script>
-  <script src="app/lib/angular/angular-route.js"></script>
-  <script src="app/lib/localStorageDb/localstoragedb.js"></script>
-  <script src="app/js/app.js"></script>
-  <script src="app/js/services.js"></script>
-  <script src="app/js/dataStore.js"></script>
-  <script src="app/js/controllers.js"></script>
-  <script src="app/js/controllers/eventsController.js"></script>
-  <script src="app/js/filters.js"></script>
-  <script src="app/js/directives.js"></script>
-</body>
+        <!-- In production use:
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+            -->
+        <script src="app/lib/underscore.js"> </script>
+        <script src="app/lib/angular/angular.js"> </script>
+        <script src="app/lib/angular/angular-route.js"> </script>
+        <script src="app/lib/localStorageDb/localstoragedb.js"> </script>
+        <script src="app/js/app.js"> </script>
+        
+        <script src="app/js/services.js"> </script>
+        <script src="app/js/services/eventItemService.js"> </script>
+        
+        <script src="app/js/dataStore.js"> </script>
+        
+        <script src="app/js/controllers.js"> </script>
+        <script src="app/js/controllers/eventsController.js"> </script>
+        <script src="app/js/controllers/eventItemsController.js"> </script>
+        
+        <script src="app/js/filters.js"> </script>
+        <script src="app/js/directives.js"> </script>
+    </body>
 </html>

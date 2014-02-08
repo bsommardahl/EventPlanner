@@ -72,7 +72,17 @@
     <Content Include="app\css\app.css" />
     <Content Include="app\index-async.html" />
     <Content Include="app\js\controllers\eventsController.js" />
+    <Content Include="app\js\controllers\eventItemsController.js" />
     <Content Include="app\js\dataStore.js" />
+    <Content Include="app\js\services\eventItemService.js" />
+    <Content Include="app\lib\localStorageDb\localstoragedb.js" />
+    <Content Include="app\lib\localStorageDb\localstoragedb.min.js" />
+    <Content Include="app\lib\underscore.js" />
+    <Content Include="app\partials\eventItems.html" />
+    <Content Include="app\partials\eventItemDetails.html" />
+    <Content Include="app\partials\createEventItem.html" />
+    <Content Include="app\partials\eventDetails.html" />
+    <Content Include="app\partials\events.html" />
     <Content Include="index.html" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controllers.js" />
@@ -366,7 +376,8 @@
     <Content Include="app\lib\angular\angular.min.js.map" />
     <Content Include="app\lib\angular\errors.json" />
     <Content Include="app\lib\angular\version.json" />
-    <Content Include="app\partials\.gitkeep" />
+    <Content Include="app\lib\localStorageDb\CHANGELOG" />
+    <Content Include="app\lib\localStorageDb\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
